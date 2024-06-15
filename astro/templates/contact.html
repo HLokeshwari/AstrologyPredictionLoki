@@ -1,0 +1,144 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us For Further Reference</title>
+
+    <!-- Include Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Include Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+
+    <style>
+        /* Apply custom styles to the page */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('{% static 'images/zodiac.jpg' %}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #FFC107; /* Yellow color */
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: maroon; /* Blue color */
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        p {
+            color: #ffffff; /* White color */
+            font-size: 18px;
+        }
+
+        /* Style the contact details */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Style the links */
+        a {
+            color: #FF5722; /* Orange color */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #FF9800; /* Darker Orange color */
+            text-decoration: underline;
+        }
+
+        /* Container for organization details */
+        .organization-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 6px 4px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        /* Container for contact information */
+        .contact-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 6px 4px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        /* Style for the pink text */
+        .pink-text {
+            color: #E91E63; /* Pink color */
+        }
+
+        .violet-text {
+            color: #9C27B0; /* Violet color */
+        }
+
+        .blue-text {
+            color: #2196F3; /* Light Blue color */
+        }
+
+        .black-text {
+            color: #000; /* Black color */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar included here -->
+    {% include 'navibar.html' %}
+
+    <div class="container">
+        <h1 class="text-center">Contact Us</h1>
+        <p class="text-center blue-text">Thank you for your interest in our organization. You can get in touch with us using the following contact details:</p>
+
+        <!-- Organization Details Container -->
+        <div class="organization-container">
+            <h2>Our Organization Details</h2>
+            <p><strong>Organization Name:</strong> Celestial Enterprises</p>
+            <p><strong>Address:</strong> 123 Star Avenue, Galaxy City, Universe</p>
+        </div>
+
+        <!-- Contact Information Container -->
+        <div class="contact-container">
+            <h2>Contact Information</h2>
+            <p><strong>Email:</strong> <a href="mailto:contact@celestial.com">contact@celestial.com</a></p>
+            <p><strong>Phone:</strong> +123 456-7890</p>
+            <p><strong>Phone:</strong> +987 654-3210</p>
+        </div>
+
+        <!-- Additional Phone Numbers Container -->
+        <div class="contact-container black-text">
+            <h2>Additional Phone Numbers</h2>
+            <ul>
+                <li>+111 222-3333 (Sales)</li>
+                <li>+444 555-6666 (Support)</li>
+            </ul>
+        </div>
+
+        <div class="text-center">
+            <center>
+            <h3 class="pink-text">Feel Free To Provide Your Feedback....</h3>
+                </center>
+        </div>
+    </div>
+</body>
+</html>

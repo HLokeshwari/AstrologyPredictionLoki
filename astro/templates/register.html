@@ -1,0 +1,114 @@
+{% load static %}
+
+{% block content %}
+{% include 'navibar.html' %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<style>
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 70vh; /* Ensure the form container takes up at least the full viewport height */
+    }
+
+    .form-box {
+        background-color: #E0F4FF;
+
+        padding: 20px; /* Reduce padding for a neater look */
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for a beautiful effect */
+        width: 60%; /* Increase box width for a more centered look */
+        max-width: 600px; /* Limit the maximum width of the form */
+
+        /* Center the form horizontally and vertically within the box */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-box header {
+        background-color: #E0F4FF;
+        border-radius: 10px 10px 0 0; /* Rounded corners for the top */
+        padding: 20px;
+        text-align: center;
+    }
+
+    body {
+        background-color: #E6E6FA;
+       background-image: url('{% static 'images/11.jpg' %}');
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    /* Video background styling */
+    #bgvid {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="email"]:focus {
+        border-color: #007BFF;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .registration-image {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+    }
+</style>
+
+<div class="form-container">
+    <!-- Video background -->
+    <video playsinline autoplay muted loop id="bgvid">
+        <source src="https://www.shutterstock.com/video/clip-1063831528-4k-3d-outer-space-animation-red-pink?irclickid=wUQS72yLjxyPUazVqE07vQC6UkFQKMyJqQ5J1s0&irgwc=1&pl=38919-1636620&utm_campaign=Eezy%2C%20LLC&utm_content=1636620&utm_medium=Affiliate&utm_source=38919&utm_term=www.videezy.com" type="video/mp4">
+    </video>
+
+    <div class="form-box">
+        <header>
+            <h1>Registration Page</h1>
+        </header>
+        <h2>{{ msg }}</h2><br><br>
+        <div class="container form-content">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <center>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Clear">
+                </center>
+            </form>
+        </div>
+    </div>
+</div>
+<br><br>
+
+<div class="footer">
+    &copy; {{ year }} Astrology(2000).Lokeshwari Hukumathirao--- All rights reserved.
+</div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Provide Your Valuable Feedback!!!</title>
+    {% include 'navibar.html' %}
+    <!-- Include Bootstrap CSS and JavaScript -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        /* Apply custom styles to the page */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        h1 {
+            color: #007BFF;
+            font-size: 38px;
+        }
+
+        label {
+            color: #333;
+            font-size: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type='text'],
+        textarea {
+            width: 100%;
+            padding: 9px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        /* Reduce the size of the textarea */
+        textarea {
+            height: 150px; /* Adjust the desired height */
+
+        }
+
+        button.btn-primary {
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar included here -->
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Provide Your Valuable Feedback</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_name">Your Name:</label>
+                {{ form.name }}
+            </div>
+            <div class="form-group">
+                <label for="id_email">Your Email:</label>
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                <label for="id_query">Your Feedback:</label>
+                {{ form.query }}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Feedback</button>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}
+
+
